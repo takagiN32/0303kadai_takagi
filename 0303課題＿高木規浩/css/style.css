@@ -47,7 +47,7 @@ img {
 
 /* body */
 body {
-    background-color: beige;
+    background-color: #e8d9bf;
 }
 
 /* ヘッダー */
@@ -61,6 +61,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
+    margin: auto;
 }
 
 .logo {
@@ -73,7 +74,6 @@ body {
 }
 .pc_nav li {
     display: flex;
-
     color: #ffffff;
     font-family: "游ゴシック", "YuGothic", "游ゴシック Medium",
         "Yu Gothic Medium", "游ゴシック", "sans-serif";
@@ -95,15 +95,12 @@ body {
     justify-content: center;
     text-align: center;
     margin: 110px auto 7.5px auto;
-    width: 1000px;
-    font-family: "Yumin Medium";
-    width: 1000px;
+    max-width: 1000px;
 }
 
 .top-content h2 {
-    width: 1000px;
-    font-size: 82pt;
-    letter-spacing: -0.1em;
+    max-width: 1000px;
+    font-size: 82px;
     line-height: 1.17;
 }
 .top-content p {
@@ -111,15 +108,14 @@ body {
     margin: 0 0 57px;
 }
 .top-content p:last-child {
-    font-size: 23pt;
+    font-size: 23px;
     margin: 22px 0 100px 0;
-    letter-spacing: -0.1em;
     line-height: 1.652;
 }
 
 /* ABOUT US */
 .about-container {
-    width: 1000px;
+    max-width: 1000px;
     margin: auto;
     margin-bottom: 77px;
     display: flex;
@@ -128,10 +124,8 @@ body {
 .about-img {
     border-bottom-right-radius: 60px;
 }
-.about-container img {
+.about-title {
     width: 50%;
-    width: 500px;
-    height: 560px;
 }
 .about-content {
     display: flex;
@@ -141,27 +135,23 @@ body {
 }
 .about-content text {
     text-align: justify;
-    font-family: "YuMin Medium";
     line-height: 1.625;
+    padding-right: 10px;
+    padding-left: 10px;
 }
 .about-content img {
     margin-top: 50px;
-    margin-bottom: 20px;
-    width: 272px;
-    height: 77px;
+    max-width: 272px;
 }
 .about-content h3 {
-    font-size: 40pt;
+    font-size: 40px;
     text-align: justify;
-    font-family: "YuMin Medium";
-    margin-bottom: 30px;
     line-height: 1.386;
-    letter-spacing: -0.1em;
 }
 
 /* MENU */
 .menu-top {
-    width: 1000px;
+    max-width: 1000px;
     margin: auto;
     display: flex;
     flex-flow: column;
@@ -170,7 +160,6 @@ body {
 .menu-title {
     margin: 43px auto 43px auto;
     width: 151px;
-    height: 77px;
 }
 .menu-container {
     display: flex;
@@ -182,21 +171,18 @@ body {
 }
 .menu h3 {
     color: red;
-    font-size: 38pt;
+    font-size: 38px;
     margin-top: -16px;
     margin-bottom: 18px;
-    font-family: "YuMin Medium";
 }
 .menu p {
     text-align: justify;
-    font-family: "YuMin Medium";
     line-height: 1.47;
+    font-size: 15px;
+    padding: 0 10px 0 10px;
 }
 .menu img {
-    width: 100%;
     border-top-right-radius: 30px;
-    width: 300px;
-    height: 200px;
 }
 
 /* GALLERY */
@@ -207,12 +193,10 @@ body {
     margin: 26px auto 26px auto;
     text-align: center;
     width: 245px;
-    height: 78px;
 }
 .gallery-image {
     display: flex;
     justify-content: center;
-    width: 100%;
 }
 .gallery-image img {
     width: 20%;
@@ -220,15 +204,14 @@ body {
 
 /* EVENT */
 .event-top {
-    width: 1000px;
     margin: auto;
+    max-width: 1000px;
 }
 
 .event-title {
     margin: 39px auto 39px auto;
     text-align: center;
     width: 173px;
-    height: 78px;
 }
 
 .event-container {
@@ -239,28 +222,24 @@ body {
     justify-content: center;
     padding: 30px 0;
 }
-.event-container p {
-    width: 100%;
-    margin-left: 160px;
-    font-family: "YuMin Medium";
+.event-container li {
     line-height: 1.957;
-    padding: 10px 0;
+    padding: 10px 0 0 160px;
 }
 .event-text {
     border-bottom: 1px solid #000;
-    margin-left: 45px;
+    margin-left: 40px;
 }
 
 /* ACCESS */
 .access-title {
     margin: 40px auto 40px auto;
     text-align: center;
-    width: 213px;
-    height: 78px;
+    max-width: 213px;
 }
 .access-map {
     width: 100%;
-    height: 350px;
+    height: 360px;
 }
 
 /* footer */
@@ -271,27 +250,24 @@ footer {
 .footer-container {
     display: flex;
     justify-content: flex-start;
-    width: 1000px;
+    max-width: 1000px;
     margin: auto;
     padding: 75px 0 75px 0;
 }
 .footer-logo {
     width: 226px;
-    height: 50px;
 }
 .footer-nav {
     margin-left: 60px;
 }
 .footer-nav p {
-    font-size: 20pt;
+    font-size: 20px;
     line-height: 1.95;
-    font-family: "YuMin Medium";
 }
 
 .copyright {
     text-align: center;
     padding-bottom: 80px;
-    font-family: "YuMin Medium";
 }
 /* page-top */
 .totop {
