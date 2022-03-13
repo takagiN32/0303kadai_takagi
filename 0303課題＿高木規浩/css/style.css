@@ -62,6 +62,7 @@ body {
     left: 0;
     width: 100%;
     margin: auto;
+    padding-top: 10px;
 }
 
 .logo {
@@ -80,6 +81,7 @@ body {
     font-weight: bold;
     width: 104px;
     margin-right: 55px;
+    font-size: 18px;
 }
 .pc_nav li:last-child {
     margin-right: 0;
@@ -102,9 +104,10 @@ body {
     max-width: 1000px;
     font-size: 82px;
     line-height: 1.17;
+    font-weight: lighter;
 }
 .top-content p {
-    font-size: 30pt;
+    font-size: 30px;
     margin: 0 0 57px;
 }
 .top-content p:last-child {
@@ -120,9 +123,12 @@ body {
     margin-bottom: 77px;
     display: flex;
     justify-content: space-between;
+    padding: 0 10px 0 10px;
 }
 .about-img {
     border-bottom-right-radius: 60px;
+    width: 50%;
+    align-self: flex-start;
 }
 .about-title {
     width: 50%;
@@ -131,22 +137,24 @@ body {
     display: flex;
     flex-flow: column;
     justify-content: space-around;
-    width: 44%;
+    width: 40%;
 }
 .about-content text {
     text-align: justify;
     line-height: 1.625;
     padding-right: 10px;
     padding-left: 10px;
+    font-size: 16px;
 }
 .about-content img {
     margin-top: 50px;
     max-width: 272px;
 }
 .about-content h3 {
-    font-size: 40px;
+    font-size: 44px;
     text-align: justify;
     line-height: 1.386;
+    font-weight: bolder;
 }
 
 /* MENU */
@@ -165,6 +173,7 @@ body {
     display: flex;
     justify-content: space-between;
     margin-bottom: 62px;
+    padding: 0 10px 0 10px;
 }
 .menu {
     width: 30%;
@@ -173,13 +182,13 @@ body {
     color: red;
     font-size: 38px;
     margin-top: -16px;
-    margin-bottom: 18px;
+    margin-bottom: 8px;
 }
 .menu p {
     text-align: justify;
     line-height: 1.47;
     font-size: 15px;
-    padding: 0 10px 0 10px;
+    padding: 0 10px 0 0;
 }
 .menu img {
     border-top-right-radius: 30px;
@@ -206,6 +215,7 @@ body {
 .event-top {
     margin: auto;
     max-width: 1000px;
+    padding: 0 10px 0 10px;
 }
 
 .event-title {
@@ -225,6 +235,7 @@ body {
 .event-container li {
     line-height: 1.957;
     padding: 10px 0 0 160px;
+    font-size: 23px;
 }
 .event-text {
     border-bottom: 1px solid #000;
@@ -240,12 +251,15 @@ body {
 .access-map {
     width: 100%;
     height: 360px;
+    border: 0;
+    margin-bottom: -3px;
 }
 
 /* footer */
 footer {
     background-color: #fff;
-    height: auto;
+    padding: 0 10px 0 10px;
+    /* height: auto; */
 }
 .footer-container {
     display: flex;
@@ -263,6 +277,7 @@ footer {
 .footer-nav p {
     font-size: 20px;
     line-height: 1.95;
+    color: #000;
 }
 
 .copyright {
