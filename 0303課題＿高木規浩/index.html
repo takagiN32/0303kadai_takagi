@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>カフェのサイト</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 
 <body>
@@ -16,8 +17,22 @@
     <!-- ヘッダー -->
     <header id="header">
         <div class="header_wrap">
+            <h1 class="logo">
+                <img src="image/design_cafe_logo_header@2x.png" alt="デザインカフェ">
+            </h1>
 
-            <img class="logo" src="image/design_cafe_logo_header@2x.png" alt="デザインカフェ">
+
+            <div class="sp_btn"><span></span></div>
+            <div class="sp_nav">
+                <ul>
+                    <li class="h-1"> <a href="#aboutus">ABOUT US</a></li>
+                    <li class="h-1"><a href="#menu">MENU</a></li>
+                    <li class="h-1"><a href="#gallery">GALLERY</a> </li>
+                    <li class="h-1"><a href="#event">EVENT</a></li>
+                    <li class="h-1"><a href="#access">ACCESS</a></li>
+                </ul>
+
+            </div>
 
             <div class="pc_nav">
                 <ul>
@@ -32,7 +47,12 @@
 
         </div>
         <div class="slider">
-            <img src="image/pc_first-100.jpg" alt="店内の様子">
+            <picture>
+                <source srcset="image/sp_main_vs@2x-100.jpg" media="(max-width: 767px)">
+                <img src="image/pc_first-100.jpg" alt="店内の様子">
+
+            </picture>
+
         </div>
     </header>
     <!-- 見出し -->
@@ -42,20 +62,21 @@
         <div class="top-content">
             <p>Have a happy day From a cup of coffee.</p>
             <h2> <span class="top-text">ハッピーに溢れる1日を</span><br><span class="top-text">1杯のコーヒーから。</span> </h2>
-            <p><span class="top-text">毎日を丁寧に大切に過ごしたい。だからこそ一杯一杯丁寧にコーヒーを入れ</span><br><span
-                    class="top-text">足を運んでくれるお客さんには落ち着く空間とこだわりのコーヒーを提供したい。</span></p>
+            <p><span class="top-text">毎日を丁寧に大切に過ごしたい。<br class="top-br">だからこそ一杯一杯丁寧にコーヒーを入れ</span><br><span
+                    class="top-text">足を運んでくれるお客さんには落ち着く空間<br class="top-br">とこだわりのコーヒーを提供したい。</span></p>
         </div>
 
     </section>
     <!-- ABOUT US -->
     <section class="about-container" id="aboutus">
+        <img class="about-title" src="image/about_us@2x.png" alt="about画像">
         <img class="about-img" src="image/pc_about-100.jpg" alt="ABOUT">
         <div class="about-content">
             <img src="image/about_us@2x.png" alt="about画像">
             <h3>私たちが提供する<br>こだわりのコーヒー</h3>
-            <text>
+            <p>
                 サービスを提供する上での想いや心がけていることなど、メッセージを文章で紹介します。サービスを提供する上での想いや心がけていることなど、メッセージを文章で紹介します。サービスを提供する上での想いや心がけていることなど、メッセージを文章で紹介します。サービスを提供する上での想いや心がけていることなど、メッセージを文章で紹介します。サービスを提供する上での想いや心がけていることなど、メッセージを文章で紹介します。
-            </text>
+            </p>
         </div>
     </section>
 
@@ -107,11 +128,15 @@
         <h3 class="event-title">
             <img src="image/event@2x.png" alt="イベントタイトル">
         </h3>
-        <ul class="event-container">
-            <li>2020.06.23 <span class="event-text">7月はイベント出店のためお休みします</span></li>
-            <li>2020.03.15 <span class="event-text">春の新商品新発売。話題のあのブランドとコラボ</span></li>
-            <li>2020.02.06 <span class="event-text">コーヒーの日で30％OFFイベントを開催［3日間限定］</span></li>
-        </ul>
+        <div>
+            <ul class="event-container">
+                <li>2020.06.23 <br><span class="event-text">7月はイベント出店のためお休みします</span></li>
+                <li>2020.03.15 <br><span class="event-text">春の新商品新発売。話題のあのブランドとコラボ</span></li>
+                <li>2020.02.06 <br><span class="event-text">コーヒーの日で30％OFFイベントを開催［3日間限定］</span></li>
+            </ul>
+
+        </div>
+
     </section>
 
     <!-- ACCESS -->
@@ -139,13 +164,23 @@
         </div>
         <p class="copyright">© 2021 DESIGN CAFE</p>
 
-        <!-- top-page btton -->
+        <!-- top-page button -->
         <p class="totop" style>
             <a href="#header">
                 <img src="image/to_top@2x.png" alt="トップに戻る">
             </a>
         </p>
     </footer>
+
+    <script>
+        $(function () {
+            $('.sp_btn,.sp_nav li').click(function () {
+                $('.sp_nav').fadeToggle();
+                $('.sp_btn').toggleClass('open');
+
+            });
+        });
+    </script>
 
 </body>
 

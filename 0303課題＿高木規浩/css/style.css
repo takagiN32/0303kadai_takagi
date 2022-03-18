@@ -48,6 +48,7 @@ img {
 /* body */
 body {
     background-color: #e8d9bf;
+    color: #4f260b;
 }
 
 /* ヘッダー */
@@ -90,6 +91,13 @@ body {
     width: 100%;
 }
 
+.sp_nav {
+    display: none;
+}
+.sp_btn {
+    display: none;
+}
+
 /* 見出し */
 .top {
     display: flex;
@@ -112,8 +120,11 @@ body {
 }
 .top-content p:last-child {
     font-size: 23px;
-    margin: 22px 0 100px 0;
+    margin: 23px 0 100px 0;
     line-height: 1.652;
+}
+.top-br {
+    display: none;
 }
 
 /* ABOUT US */
@@ -131,15 +142,12 @@ body {
     align-self: flex-start;
 }
 .about-title {
-    width: 50%;
+    display: none;
 }
 .about-content {
-    display: flex;
-    flex-flow: column;
-    justify-content: space-around;
     width: 40%;
 }
-.about-content text {
+.about-content p {
     text-align: justify;
     line-height: 1.625;
     padding-right: 10px;
@@ -155,15 +163,13 @@ body {
     text-align: justify;
     line-height: 1.386;
     font-weight: bolder;
+    margin: 50px 0 35px 0;
 }
 
 /* MENU */
 .menu-top {
     max-width: 1000px;
     margin: auto;
-    display: flex;
-    flex-flow: column;
-    justify-content: space-around;
 }
 .menu-title {
     margin: 43px auto 43px auto;
@@ -179,10 +185,11 @@ body {
     width: 30%;
 }
 .menu h3 {
-    color: red;
+    color: #4f260b;
     font-size: 38px;
     margin-top: -16px;
     margin-bottom: 8px;
+    margin-left: 10px;
 }
 .menu p {
     text-align: justify;
@@ -195,9 +202,7 @@ body {
 }
 
 /* GALLERY */
-.gallery-top {
-    margin: auto;
-}
+
 .gallery-title h3 {
     margin: 26px auto 26px auto;
     text-align: center;
@@ -237,8 +242,11 @@ body {
     padding: 10px 0 0 160px;
     font-size: 23px;
 }
+.event-container br {
+    display: none;
+}
 .event-text {
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid #4f260b;
     margin-left: 40px;
 }
 
@@ -259,7 +267,6 @@ body {
 footer {
     background-color: #fff;
     padding: 0 10px 0 10px;
-    /* height: auto; */
 }
 .footer-container {
     display: flex;
@@ -290,4 +297,264 @@ footer {
     bottom: 20px;
     right: 20px;
     width: 125px;
+}
+
+@media screen and (max-width: 1100px) {
+    /* ハンバーガー */
+    .pc_nav {
+        display: none;
+    }
+    .sp_btn {
+        display: block;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        height: 30px;
+        cursor: pointer;
+        z-index: 100;
+    }
+    /* ハンバーガー3本線 */
+    .sp_btn span {
+        width: 33px;
+        height: 3px;
+        background: #fff;
+        display: block;
+        position: relative;
+        top: 10px;
+        transition: 0.3s;
+    }
+    .sp_btn span::before,
+    .sp_btn span::after {
+        content: "";
+        width: 33px;
+        height: 3px;
+        background: #fff;
+        display: block;
+        position: absolute;
+        transition: 0.3s;
+    }
+    .sp_btn span:before {
+        bottom: 10px;
+    }
+    .sp_btn span:after {
+        top: 10px;
+    }
+
+    .open span {
+        background: transparent;
+    }
+    .open span:before {
+        transform: rotate(45deg);
+
+        bottom: 0px;
+    }
+    .open span:after {
+        top: 0px;
+        transform: rotate(135deg);
+    }
+
+    .sp_nav {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100%;
+        background-color: rgba(000, 000, 000, 0.8);
+    }
+    .sp_nav ul {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: auto;
+    }
+    .sp_nav li {
+        font-size: 5vw;
+        border-bottom: 1px solid #eee;
+        padding: 10px;
+        color: #fff;
+        text-align: center;
+        font-family: "游ゴシック", "YuGothic", "游ゴシック Medium",
+            "Yu Gothic Medium", "游ゴシック", "sans-serif";
+    }
+
+    /* ABOUT US */
+    .about-content img {
+        margin-top: 0px;
+    }
+    .about-content h3 {
+        font-size: 4vw;
+        margin: 3% 0 2% 0;
+    }
+
+    /* MENU */
+
+    /* GALLERY */
+
+    /* EVENT */
+
+    .event-container br {
+        display: block;
+    }
+    .event-container span {
+        margin: 0;
+    }
+
+    /* ACCESS */
+
+    /* FOOTER */
+}
+
+@media screen and (max-width: 767px) {
+    /* TOP */
+    .top {
+        margin: 60px auto 60px auto;
+    }
+
+    .top-content h2 {
+        font-size: 10.1vw;
+    }
+    .top-content p {
+        font-size: 4.5vw;
+        margin: 0 0 23px;
+    }
+    .top-content p:last-child {
+        font-size: 4.27vw;
+        margin: 20px 0 0 0;
+    }
+    .top-br {
+        display: block;
+    }
+
+    /* ABOUT US */
+    .about-container {
+        margin-bottom: 51px;
+        display: flex;
+        flex-direction: column;
+
+        padding: 0;
+    }
+    .about-title {
+        display: block;
+        margin: auto;
+        width: 42.7vw;
+        margin-bottom: 18px;
+    }
+
+    .about-img {
+        width: 100%;
+    }
+    .about-content {
+        width: 100%;
+    }
+    .about-content img {
+        display: none;
+    }
+    .about-content p {
+        padding-right: 5px;
+        padding-left: 30px;
+        font-size: 4.5vw;
+    }
+    .about-content h3 {
+        font-size: 9.6vw;
+        margin: 36px 0 30px 0;
+        padding-left: 20px;
+    }
+
+    /* MENU */
+    .menu-top {
+        margin-bottom: 87px;
+    }
+    .menu-title {
+        width: 23.2vw;
+    }
+    .menu-container {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 62px;
+        padding: 0 9.3% 0 9.3%;
+    }
+    .menu {
+        width: 100%;
+        margin-bottom: 56px;
+    }
+    .menu h3 {
+        font-size: 10.6vw;
+        margin-bottom: 21px;
+    }
+    .menu p {
+        font-size: 4.67vw;
+        padding: 0;
+    }
+    .menu img {
+        width: 100%;
+    }
+
+    /* GALLERY */
+
+    .gallery-title h3 {
+        margin: 0 auto 20px auto;
+        width: 37.9vw;
+    }
+
+    /* EVENT */
+    .event-top {
+        margin: 0 14px 31px 14px;
+    }
+    .event-title {
+        margin: 33px auto 19px auto;
+        width: 26.7vw;
+    }
+
+    .event-container {
+        padding-bottom: 18px;
+        width: 100%;
+    }
+    .event-container li {
+        font-size: 4.27vw;
+        padding: 0 0 25px 7%;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        line-height: 1.1;
+        margin-right: 10px;
+        padding-right: 10px;
+    }
+
+    /* ACCESS */
+
+    .access-title {
+        margin: 0 auto 10px auto;
+        width: 33vw;
+    }
+    .access-map {
+        height: 191px;
+    }
+
+    /* FOOTER */
+
+    .footer-container {
+        display: flex;
+        flex-direction: column;
+        padding: 45px 0 45px 0;
+    }
+    .footer-logo {
+        width: 60.3vw;
+    }
+    .footer-nav {
+        margin-left: 0px;
+        margin-top: 30px;
+    }
+    .footer-nav p {
+        font-size: 4.75vw;
+    }
+    .copyright {
+        font-size: 4.27vw;
+    }
+
+    /* page-top */
+    .totop {
+        width: 100px;
+    }
 }
