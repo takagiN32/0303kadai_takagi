@@ -69,8 +69,14 @@
     </section>
     <!-- ABOUT US -->
     <section class="about-container" id="aboutus">
-        <img class="about-title" src="image/about_us@2x.png" alt="about画像">
-        <img class="about-img" src="image/pc_about-100.jpg" alt="ABOUT">
+        <h2 class="about-title">
+            <img src="image/about_us@2x.png" alt="about画像">
+        </h2>
+        <picture class="about-img">
+            <source srcset="image/about_us@2x-100.jpg" media="(max-width: 767px)">
+            <img src="image/pc_about-100.jpg" alt="ABOUT">
+        </picture>
+
         <div class="about-content">
             <img src="image/about_us@2x.png" alt="about画像">
             <h3>私たちが提供する<br>こだわりのコーヒー</h3>
@@ -91,17 +97,30 @@
 
         <div class="menu-container">
             <div class="menu">
-                <img src="image/pc_menu_drink-100.jpg" alt="ドリンクメニュー">
+                <picture>
+                    <source srcset="image/drink_sp@2x-100.jpg" media="(max-width: 767px)">
+                    <img src="image/pc_menu_drink-100.jpg" alt="ドリンクメニュー">
+
+                </picture>
+
                 <h3>DRINK</h3>
                 <p>ドリンクメニューの概要を100文字程度で紹介します。素材やこだわりなどをアピールしていきます。</p>
             </div>
             <div class="menu">
-                <img src="image/pc_menu_food-100.jpg" alt="フードメニュー">
+                <picture>
+                    <source srcset="image/food_sp@2x-100.jpg" media="(max-width: 767px)">
+                    <img src="image/pc_menu_food-100.jpg" alt="フードメニュー">
+                </picture>
+
                 <h3>FOOD</h3>
                 <p>フードメニューの概要を100文字程度で紹介します。素材やこだわりなどをアピールしていきます。</p>
             </div>
             <div class="menu">
-                <img src="image/pc_menu_sweets-100.jpg" alt="スイーツメニュー">
+                <picture>
+                    <source srcset="image/cake_sp@2x-100.jpg" media="(max-width: 767px)">
+                    <img src="image/pc_menu_sweets-100.jpg" alt="スイーツメニュー">
+                </picture>
+
                 <h3>SWEETS</h3>
                 <p>スイーツメニューの概要を100文字程度で紹介します。素材やこだわりなどをアピールしていきます。</p>
             </div>
@@ -165,7 +184,7 @@
         <p class="copyright">© 2021 DESIGN CAFE</p>
 
         <!-- top-page button -->
-        <p class="totop" style>
+        <p class="to-top" style>
             <a href="#header">
                 <img src="image/to_top@2x.png" alt="トップに戻る">
             </a>
@@ -173,13 +192,59 @@
     </footer>
 
     <script>
+        // ハンバーガーメニュー
+        // a[href^="#"]'部分はスムーススクロール
         $(function () {
-            $('.sp_btn,.sp_nav li').click(function () {
+            $('.sp_btn,.sp_nav li ,a[href^="#"]').click(function () {
                 $('.sp_nav').fadeToggle();
                 $('.sp_btn').toggleClass('open');
 
+
+                // $('.sp_nav,a[href^="#"]').click(function () {
+
+                // スクロールの速度
+                let speed = 400;
+                // スクロールタイプ
+                let type = 'swing';
+                // href属性の取得
+                let href = $(this).attr("href");
+                // 移動先の取得（hrefが#indexならトップ$(html)に、）
+                let target = $(href == "#" ? '' : href);
+                // 移動先のポジション取得
+                let position = target.offset().top;
+                // animateでスムーススクロール
+                $('body,html').animate({ scrollTop: position }, speed, type);
+                return false
             });
         });
+
+
+
+        // });
+
+
+        // to-top の headerへのスムーススクロール
+        $(function () {
+            // #で始まるリンクをクリックした場合
+            $('.to-top').click(function () {
+                // スクロールの速度
+                let speed = 400;
+                // スクロールタイプ
+                let type = 'swing';
+                // href属性の取得
+                let href = $(this).attr("href");
+                // 移動先の取得（hrefが#indexならトップ$(html)に、）
+                let target = $(href == "" ? '' : href);
+                // 移動先のポジション取得
+                let position = target.offset().top;
+                // animateでスムーススクロール
+                $('body,html').animate({ scrollTop: position }, speed, type);
+                return false
+            });
+
+        });
+
+
     </script>
 
 </body>
