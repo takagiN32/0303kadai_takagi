@@ -6,8 +6,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>カフェのサイト</title>
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
+
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/lightbox.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <!-- <link rel="stylesheet" href="./script/lightbox/css/lightbox.min.css"> -->
+    <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> -->
+    <!-- <script src="js/lightbox.js" type="text/javascript"></script> -->
 </head>
 
 <body>
@@ -47,11 +58,20 @@
 
         </div>
         <div class="slider">
-            <picture>
-                <source srcset="image/sp_main_vs@2x-100.jpg" media="(max-width: 767px)">
-                <img src="image/pc_first-100.jpg" alt="店内の様子">
+            <div>
+                <picture>
+                    <source srcset="image/sp_main_vs@2x-100.jpg" media="(max-width: 767px)">
+                    <img src="image/pc_first-100.jpg" alt="店内の様子">
+                </picture>
+            </div>
+            <div>
+                <picture>
+                    <source srcset="image/sp_main_vs_2@2x-100.jpg" media="(max-width: 767px)">
+                    <img src="image/slider_2.jpg" alt="店内の様子">
+                </picture>
+            </div>
 
-            </picture>
+
 
         </div>
     </header>
@@ -73,9 +93,22 @@
             <img src="image/about_us@2x.png" alt="about画像">
         </h2>
         <picture class="about-img">
-            <source srcset="image/about_us@2x-100.jpg" media="(max-width: 767px)">
-            <img src="image/pc_about-100.jpg" alt="ABOUT">
+            <a class="js-modal-open" href="" data-target="modal-1">
+                <source srcset="image/about_us@2x-100.jpg" media="(max-width: 767px)">
+
+                <img src="image/pc_about-100.jpg" alt="ABOUT">
+            </a>
         </picture>
+
+        <div id="modal-1" class="modal js-modal">
+            <div class="modal_bg js-modal-close"></div>
+            <div class="modal-content">
+                <img class="modal-img" src="image/about_us@2x-100.jpg" alt="ABOUT">
+                <p>ABOUT画像</p>
+                <a class="js-modal-close" href="">閉じる</a>
+            </div>
+        </div>
+
 
         <div class="about-content">
             <img src="image/about_us@2x.png" alt="about画像">
@@ -89,6 +122,9 @@
 
 
 
+
+
+
     <!-- MENU -->
     <section class="menu-top" id="menu">
         <div class="menu-title">
@@ -97,29 +133,80 @@
 
         <div class="menu-container">
             <div class="menu">
-                <picture>
-                    <source srcset="image/drink_sp@2x-100.jpg" media="(max-width: 767px)">
-                    <img src="image/pc_menu_drink-100.jpg" alt="ドリンクメニュー">
+                <div class="menu-modal">
+                    <picture>
 
-                </picture>
+                        <a class="js-modal-open" href="" data-target="modal-2">
+                            <source srcset="image/drink_sp@2x-100.jpg" media="(max-width: 767px)">
+                            <img src="image/pc_menu_drink-100.jpg" alt="ドリンクメニュー">
+                        </a>
+
+                    </picture>
+
+                </div>
+
+
+                <div id="modal-2" class="modal js-modal">
+                    <div class="modal_bg js-modal-close"></div>
+                    <div class="modal-content">
+                        <img src="image/pc_menu_drink-100.jpg" alt="DRINK">
+                        <p>DRINK</p>
+                        <a class="js-modal-close" href="">閉じる</a>
+                    </div>
+                </div>
+
+
+
 
                 <h3>DRINK</h3>
                 <p>ドリンクメニューの概要を100文字程度で紹介します。素材やこだわりなどをアピールしていきます。</p>
             </div>
             <div class="menu">
-                <picture>
-                    <source srcset="image/food_sp@2x-100.jpg" media="(max-width: 767px)">
-                    <img src="image/pc_menu_food-100.jpg" alt="フードメニュー">
-                </picture>
+                <div class="menu-modal">
+                    <picture>
 
+
+                        <a class="js-modal-open" href="" data-target="modal-3">
+                            <source srcset="image/food_sp@2x-100.jpg" media="(max-width: 767px)">
+                            <img src="image/pc_menu_food-100.jpg" alt="フードメニュー">
+                        </a>
+                    </picture>
+
+
+                </div>
+
+                <div id="modal-3" class="modal js-modal">
+                    <div class="modal_bg js-modal-close"></div>
+                    <div class="modal-content">
+                        <img src="image/pc_menu_food-100.jpg" alt="FOOD">
+                        <p>FOOD</p>
+                        <a class="js-modal-close" href="">閉じる</a>
+                    </div>
+                </div>
                 <h3>FOOD</h3>
                 <p>フードメニューの概要を100文字程度で紹介します。素材やこだわりなどをアピールしていきます。</p>
             </div>
+
             <div class="menu">
-                <picture>
-                    <source srcset="image/cake_sp@2x-100.jpg" media="(max-width: 767px)">
-                    <img src="image/pc_menu_sweets-100.jpg" alt="スイーツメニュー">
-                </picture>
+                <div class="menu-modal">
+                    <picture class="menu-modal">
+
+                        <a class="js-modal-open" href="" data-target="modal-4">
+                            <source srcset="image/cake_sp@2x-100.jpg" media="(max-width: 767px)">
+                            <img src="image/pc_menu_sweets-100.jpg" alt="スイーツメニュー">
+                        </a>
+                    </picture>
+                </div>
+
+                <div id="modal-4" class="modal js-modal">
+                    <div class="modal_bg js-modal-close"></div>
+                    <div class="modal-content">
+                        <img src="image/pc_menu_sweets-100.jpg" alt="SWEETS">
+                        <p>SWEETS</p>
+                        <a class="js-modal-close" href="">閉じる</a>
+                    </div>
+                </div>
+
 
                 <h3>SWEETS</h3>
                 <p>スイーツメニューの概要を100文字程度で紹介します。素材やこだわりなどをアピールしていきます。</p>
@@ -139,6 +226,7 @@
             <img src="image/pc_gallary_03-100.jpg" alt="ギャラリー3">
             <img src="image/pc_gallary_04-100.jpg" alt="ギャラリー4">
             <img src="image/pc_gallary_05-100.jpg" alt="ギャラリー5">
+            <img src="image/pc_gallary_01-100.jpg" alt="ギャラリー１">
         </div>
 
     </section>
@@ -192,15 +280,41 @@
     </footer>
 
     <script>
-        // ハンバーガーメニュー
+
         // a[href^="#"]'部分はスムーススクロール
         $(function () {
-            $('.sp_btn,.sp_nav li ,a[href^="#"]').click(function () {
+            // ハンバーガーメニュー
+            $('.sp_btn,.sp_nav li ').click(function () {
                 $('.sp_nav').fadeToggle();
                 $('.sp_btn').toggleClass('open');
+            });
 
 
-                // $('.sp_nav,a[href^="#"]').click(function () {
+            $('.slider').slick({
+                autoplaySpeed: 2000,
+                dots: true,
+                autoplay: true,
+                arrows: false,
+
+            });
+            $('.gallery-image').slick({
+                slidesToShow: 5,
+                slidesToScroll: 1,
+                autoplaySpeed: 2000,
+                dots: true,
+                autoplay: true,
+                arrows: true,
+                responsive: [{
+                    breakpoint: 767,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                    }
+                }]
+            });
+
+            $('a[href^="#"]').click(function () {
+                // $('.sp_nav').fadeOut();
 
                 // スクロールの速度
                 let speed = 400;
@@ -215,16 +329,32 @@
                 // animateでスムーススクロール
                 $('body,html').animate({ scrollTop: position }, speed, type);
                 return false
+
             });
-        });
+
+
+            $('.js-modal-open').each(function () {
+                var winScrollTop;
+                $(this).on('click', function () {
+                    // スクロール位置を取得
+                    winScrollTop = $(window).scrollTop();
+                    var target = $(this).data('target');
+                    var modal = document.getElementById(target);
+                    $(modal).fadeIn();
+                    return false;
+                });
+            });
+            $('.js-modal-close').on('click', function () {
+                $('js-modal').fadeOut();
+
+                $('body,html').stop().animate({ scrollTop: winScrollTop }, 100);
+                return false;
+            });
 
 
 
-        // });
+            // to-top の headerへのスムーススクロール
 
-
-        // to-top の headerへのスムーススクロール
-        $(function () {
             // #で始まるリンクをクリックした場合
             $('.to-top').click(function () {
                 // スクロールの速度
@@ -234,16 +364,25 @@
                 // href属性の取得
                 let href = $(this).attr("href");
                 // 移動先の取得（hrefが#indexならトップ$(html)に、）
-                let target = $(href == "" ? '' : href);
+                let target = $(href == "#header" ? 'header' : href);
                 // 移動先のポジション取得
-                let position = target.offset().top;
+                let position = target.offset().top - header;
                 // animateでスムーススクロール
                 $('body,html').animate({ scrollTop: position }, speed, type);
                 return false
             });
 
+
+
         });
 
+
+
+
+        // });
+
+
+        // });
 
     </script>
 
